@@ -13,10 +13,10 @@ pipeline {
   }
 
   //agent any
-  agent {label "host_177"}
+  agent {label "host_77"}
   stages {
     stage('Pull code') {
-      agent {label "host_177"}
+      agent {label "host_77"}
       steps {
         sh 'env'
         sh 'git config --global http.sslverify false'
