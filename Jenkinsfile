@@ -19,9 +19,7 @@ pipeline {
   //}
   stages {
     stage('Pull code') {
-      //agent {
-      //  label 'host_77'
-      //}
+      agent any
       steps {
         sh 'env'
         sh 'git config --global http.sslverify false'
