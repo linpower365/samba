@@ -14,9 +14,7 @@ pipeline {
 
   }
 
-  //agent {
-  //  label "host_77"
-  //}
+  agent any
   stages {
     stage('Pull code') {
       agent any
