@@ -20,7 +20,7 @@ pipeline {
   stages {
     stage('Pull code') {
       agent {
-        label 'host_agent'
+        label 'host_77'
       }
       steps {
         echo '---start pull code from git-hub---'
