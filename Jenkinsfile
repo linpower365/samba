@@ -10,22 +10,19 @@ pipeline {
     SONARQUBE_EXCLUSIONS = "RestconfWebResourceTest.java"
 
     CHK_URL = "test-acc1/mars"
-
-
   }
 
-  agent {
-    label "host_77"
-  }
+  //agent any
+  agent {label "host_77"}
   stages {
     stage('Pull code') {
-      agent any
+      agent {label "host_77"}
       steps {
         sh 'env'
         sh 'git config --global http.sslverify false'
         sh 'pwd'
         echo '---start pull code from git-hub---'
-        git branch: "${BRANCH_SAMBA}", changelog: false, poll: false, url: "${URL_SAMBA}"
+        git branch: "${BRANCH_NAME}", changelog: false, poll: false, url: "${URL_SAMBA}"
         echo '---pull code from git-hub success---'
         sh 'ls -la'
         sh 'sleep 5'
